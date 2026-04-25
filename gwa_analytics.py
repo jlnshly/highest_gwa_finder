@@ -6,5 +6,5 @@ class GradeProcessor:
     def find_highest_gwa(self):
         if not self.students:
             return None
-        return min(self.students)
+        return min(self.students, key=lambda s: s.gwa)
 
