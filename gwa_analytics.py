@@ -5,6 +5,8 @@ class GradeProcessor:
 
     def find_highest_gwa(self):
         if not self.students:
-            return None
-        return min(self.students, key=lambda s: s.gwa)
+            return []
+        best_gwa = min(students.gwa for students in self.students)
+        highest = [s for s in self.students if s.gwa == best_gwa]
+        return highest
 
