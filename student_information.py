@@ -6,6 +6,11 @@ class Student:
         self.gwa = gwa
 
     @classmethod
-
-    
+    def from_string(cls, raw_lines):
+        """Create a Student object from a string"""
+        try:
+            first_name, last_name, gwa = raw_lines.split(',')
+            return cls(last_name.strip(),first_name.strip(), gwa.strip())
+        except (ValueError, IndexError):
+            return None
 
