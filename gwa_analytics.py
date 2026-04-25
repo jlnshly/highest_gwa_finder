@@ -4,4 +4,7 @@ class GradeProcessor:
         self.students = student_list
 
     def find_highest_gwa(self):
+        if not self.students:
+            return None
+        return min(self.students)
 
